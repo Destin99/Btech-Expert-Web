@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A-propos-de-nous{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% for about in abouts %}
+    <div class="col-md-7">
+        <h2 class="featurette-heading">A propos de nous </h2>
+        <p class="lead">{{about.description|striptags}}</p>
+    </div>
+    <div class="col-md-5">
+        <img  src="/upload/{{about.getImage()}}"  width="400" height="400">
+    </div>
+    {% endfor %}
+</div>
+</br>
+		
+{% endblock %} 
